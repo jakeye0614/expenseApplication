@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Account" max_length="40" name="x_19406_em_account" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Tables" max_length="40" name="tables" type="string">
+            <choice>
+                <element label="incident" sequence="0" value="incident"/>
+                <element label="problem" sequence="1" value="problem"/>
+            </choice>
+        </element>
+        <element dependent="tables" dependent_on_field="tables" label="Task" max_length="32" name="task" type="document_id" use_dependent_field="true"/>
+        <index name="index">
+            <element name="task"/>
+        </index>
+    </element>
+</database>
